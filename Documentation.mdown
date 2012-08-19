@@ -1,0 +1,4 @@
+## Quicksilver Evernote plugin ##
+
+This plugin adds functionality for accessing different aspects of [Evernote](https://www.evernote.com/) in Quicksilver. Currently, this plugin requires the Evernote OSX application, but that may change in the future.
+
