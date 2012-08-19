@@ -1,0 +1,250 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E198534115E1215B00DD83A1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E198534015E1215B00DD83A1 /* Cocoa.framework */; };
+		E198534315E1215B00DD83A1 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E198534215E1215B00DD83A1 /* ScriptingBridge.framework */; };
+		E198534915E1215B00DD83A1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E198534715E1215B00DD83A1 /* InfoPlist.strings */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E198533D15E1215B00DD83A1 /* Evernote.qsplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Evernote.qsplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		E198534015E1215B00DD83A1 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		E198534215E1215B00DD83A1 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
+		E198534615E1215B00DD83A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
+		E198534815E1215B00DD83A1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E198534B15E1215B00DD83A1 /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
+		E198534C15E1215B00DD83A1 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		E198534D15E1215B00DD83A1 /* Developer.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Developer.xcconfig; sourceTree = "<group>"; };
+		E198534E15E1215B00DD83A1 /* QSPlugIn.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = QSPlugIn.xcconfig; sourceTree = "<group>"; };
+		E198534F15E1215B00DD83A1 /* Quicksilver.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Quicksilver.pch; sourceTree = "<group>"; };
+		E198535015E1215B00DD83A1 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E198533A15E1215B00DD83A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E198534115E1215B00DD83A1 /* Cocoa.framework in Frameworks */,
+				E198534315E1215B00DD83A1 /* ScriptingBridge.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E198533115E1215B00DD83A1 = {
+			isa = PBXGroup;
+			children = (
+				E198534415E1215B00DD83A1 /* Evernote */,
+				E198533F15E1215B00DD83A1 /* Frameworks */,
+				E198533E15E1215B00DD83A1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E198533E15E1215B00DD83A1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E198533D15E1215B00DD83A1 /* Evernote.qsplugin */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E198533F15E1215B00DD83A1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E198534015E1215B00DD83A1 /* Cocoa.framework */,
+				E198534215E1215B00DD83A1 /* ScriptingBridge.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E198534415E1215B00DD83A1 /* Evernote */ = {
+			isa = PBXGroup;
+			children = (
+				E198534A15E1215B00DD83A1 /* Configuration */,
+				E198534515E1215B00DD83A1 /* Supporting Files */,
+			);
+			path = Evernote;
+			sourceTree = "<group>";
+		};
+		E198534515E1215B00DD83A1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E198534615E1215B00DD83A1 /* Info.plist */,
+				E198534715E1215B00DD83A1 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E198534A15E1215B00DD83A1 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				E198534B15E1215B00DD83A1 /* Common.xcconfig */,
+				E198534C15E1215B00DD83A1 /* Debug.xcconfig */,
+				E198534D15E1215B00DD83A1 /* Developer.xcconfig */,
+				E198534E15E1215B00DD83A1 /* QSPlugIn.xcconfig */,
+				E198534F15E1215B00DD83A1 /* Quicksilver.pch */,
+				E198535015E1215B00DD83A1 /* Release.xcconfig */,
+			);
+			name = Configuration;
+			path = /private/tmp/QS/Configuration;
+			sourceTree = "<absolute>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E198533C15E1215B00DD83A1 /* Evernote */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E198535B15E1215B00DD83A1 /* Build configuration list for PBXNativeTarget "Evernote" */;
+			buildPhases = (
+				E198533815E1215B00DD83A1 /* Update version and documentation */,
+				E198533915E1215B00DD83A1 /* Sources */,
+				E198533A15E1215B00DD83A1 /* Frameworks */,
+				E198533B15E1215B00DD83A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Evernote;
+			productName = Evernote;
+			productReference = E198533D15E1215B00DD83A1 /* Evernote.qsplugin */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E198533315E1215B00DD83A1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = E198533615E1215B00DD83A1 /* Build configuration list for PBXProject "Evernote" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E198533115E1215B00DD83A1;
+			productRefGroup = E198533E15E1215B00DD83A1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E198533C15E1215B00DD83A1 /* Evernote */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E198533B15E1215B00DD83A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E198534915E1215B00DD83A1 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E198533815E1215B00DD83A1 /* Update version and documentation */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Update version and documentation";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "\"$QS_BUILD_ROOT/Tools/bltrversion\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E198533915E1215B00DD83A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E198534715E1215B00DD83A1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E198534815E1215B00DD83A1 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E198535915E1215B00DD83A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E198534C15E1215B00DD83A1 /* Debug.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		E198535A15E1215B00DD83A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E198535015E1215B00DD83A1 /* Release.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		E198535C15E1215B00DD83A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E198534E15E1215B00DD83A1 /* QSPlugIn.xcconfig */;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E198535D15E1215B00DD83A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E198534E15E1215B00DD83A1 /* QSPlugIn.xcconfig */;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E198533615E1215B00DD83A1 /* Build configuration list for PBXProject "Evernote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E198535915E1215B00DD83A1 /* Debug */,
+				E198535A15E1215B00DD83A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E198535B15E1215B00DD83A1 /* Build configuration list for PBXNativeTarget "Evernote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E198535C15E1215B00DD83A1 /* Debug */,
+				E198535D15E1215B00DD83A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E198533315E1215B00DD83A1 /* Project object */;
+}

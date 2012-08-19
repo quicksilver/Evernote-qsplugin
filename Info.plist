@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleIconFile</key>
+	<string></string>
+	<key>CFBundleIdentifier</key>
+	<string>se.stdin.quicksilver.${PRODUCT_NAME:rfc1034identifier}</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>${PRODUCT_NAME}</string>
+	<key>CFBundlePackageType</key>
+	<string>BNDL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0.0</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>QSRequirements</key>
+	<dict>
+		<key>bundles</key>
+		<array>
+			<dict>
+				<key>id</key>
+				<string>com.evernote.Evernote</string>
+				<key>name</key>
+				<string>Evernote</string>
+			</dict>
+		</array>
+	</dict>
+	<key>QSPlugIn</key>
+	<dict>
+		<key>author</key>
+		<string>Andreas Johansson</string>
+		<key>categories</key>
+		<array>
+			<string>Applications</string>
+			<string>Web</string>
+		</array>
+		<key>description</key>
+		<string>Access to information and functionality in Evernote</string>
+		<key>extendedDescription</key>
+		<string></string>
+		<key>icon</key>
+		<string>com.evernote.Evernote</string>
+		<key>relatedBundles</key>
+		<array>
+			<string>com.evernote.Evernote</string>
+		</array>
+	</dict>
+</dict>
+</plist>
