@@ -54,5 +54,28 @@
 			<string>com.evernote.Evernote</string>
 		</array>
 	</dict>
+	<key>QSRegistration</key>
+	<dict>
+		<key>QSBundleChildHandlers</key>
+		<dict>
+			<key>com.evernote.Evernote</key>
+			<string>QSEvernoteObjectSource</string>
+		</dict>
+		<key>QSTypeDefinitions</key>
+		<dict>
+			<key>com.evernote.Evernote.notebook</key>
+			<dict>
+				<key>icon</key>
+				<string>com.evernote.Evernote</string>
+				<key>name</key>
+				<string>Evernote Notebook</string>
+			</dict>
+		</dict>
+		<key>QSObjectHandlers</key>
+		<dict>
+			<key>com.evernote.Evernote.notebook</key>
+			<string>QSEvernoteObjectSource</string>
+		</dict>
+	</dict>
 </dict>
 </plist>

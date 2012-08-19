@@ -12,6 +12,8 @@
 		E198534915E1215B00DD83A1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E198534715E1215B00DD83A1 /* InfoPlist.strings */; };
 		E1F0243315E1278E00E0E366 /* Evernote.app in Resources */ = {isa = PBXBuildFile; fileRef = E1F0243215E1278E00E0E366 /* Evernote.app */; };
 		E1F0243B15E1281400E0E366 /* Evernote.app in Sources */ = {isa = PBXBuildFile; fileRef = E1F0243215E1278E00E0E366 /* Evernote.app */; };
+		E1F0244415E12D2E00E0E366 /* QSEvernoteObjectSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F0244315E12D2E00E0E366 /* QSEvernoteObjectSource.m */; };
+		E1F0244715E1303300E0E366 /* QSEvernoteNotebookParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F0244615E1303300E0E366 /* QSEvernoteNotebookParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -41,6 +43,11 @@
 		E198534F15E1215B00DD83A1 /* Quicksilver.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Quicksilver.pch; sourceTree = "<group>"; };
 		E198535015E1215B00DD83A1 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		E1F0243215E1278E00E0E366 /* Evernote.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; name = Evernote.app; path = /Applications/Evernote.app; sourceTree = "<absolute>"; };
+		E1F0244115E12BC500E0E366 /* QSEvernoteDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSEvernoteDefinitions.h; sourceTree = "<group>"; };
+		E1F0244215E12D2E00E0E366 /* QSEvernoteObjectSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSEvernoteObjectSource.h; sourceTree = "<group>"; };
+		E1F0244315E12D2E00E0E366 /* QSEvernoteObjectSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSEvernoteObjectSource.m; sourceTree = "<group>"; };
+		E1F0244515E1303300E0E366 /* QSEvernoteNotebookParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSEvernoteNotebookParser.h; sourceTree = "<group>"; };
+		E1F0244615E1303300E0E366 /* QSEvernoteNotebookParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSEvernoteNotebookParser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +95,11 @@
 			children = (
 				E198534A15E1215B00DD83A1 /* Configuration */,
 				E198534515E1215B00DD83A1 /* Supporting Files */,
+				E1F0244115E12BC500E0E366 /* QSEvernoteDefinitions.h */,
+				E1F0244215E12D2E00E0E366 /* QSEvernoteObjectSource.h */,
+				E1F0244315E12D2E00E0E366 /* QSEvernoteObjectSource.m */,
+				E1F0244515E1303300E0E366 /* QSEvernoteNotebookParser.h */,
+				E1F0244615E1303300E0E366 /* QSEvernoteNotebookParser.m */,
 			);
 			path = Evernote;
 			sourceTree = "<group>";
@@ -143,7 +155,9 @@
 		E198533315E1215B00DD83A1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = QSEvernote;
 				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = stdin.se;
 			};
 			buildConfigurationList = E198533615E1215B00DD83A1 /* Build configuration list for PBXProject "Evernote" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -197,6 +211,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1F0243B15E1281400E0E366 /* Evernote.app in Sources */,
+				E1F0244415E12D2E00E0E366 /* QSEvernoteObjectSource.m in Sources */,
+				E1F0244715E1303300E0E366 /* QSEvernoteNotebookParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
