@@ -14,6 +14,7 @@
 		E1F0243B15E1281400E0E366 /* Evernote.app in Sources */ = {isa = PBXBuildFile; fileRef = E1F0243215E1278E00E0E366 /* Evernote.app */; };
 		E1F0244415E12D2E00E0E366 /* QSEvernoteObjectSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F0244315E12D2E00E0E366 /* QSEvernoteObjectSource.m */; };
 		E1F0244715E1303300E0E366 /* QSEvernoteNotebookParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F0244615E1303300E0E366 /* QSEvernoteNotebookParser.m */; };
+		E1F0244A15E3F56900E0E366 /* QSEvernoteNoteParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F0244915E3F56900E0E366 /* QSEvernoteNoteParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -48,6 +49,8 @@
 		E1F0244315E12D2E00E0E366 /* QSEvernoteObjectSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSEvernoteObjectSource.m; sourceTree = "<group>"; };
 		E1F0244515E1303300E0E366 /* QSEvernoteNotebookParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSEvernoteNotebookParser.h; sourceTree = "<group>"; };
 		E1F0244615E1303300E0E366 /* QSEvernoteNotebookParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSEvernoteNotebookParser.m; sourceTree = "<group>"; };
+		E1F0244815E3F56900E0E366 /* QSEvernoteNoteParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSEvernoteNoteParser.h; sourceTree = "<group>"; };
+		E1F0244915E3F56900E0E366 /* QSEvernoteNoteParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSEvernoteNoteParser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +101,8 @@
 				E1F0244115E12BC500E0E366 /* QSEvernoteDefinitions.h */,
 				E1F0244215E12D2E00E0E366 /* QSEvernoteObjectSource.h */,
 				E1F0244315E12D2E00E0E366 /* QSEvernoteObjectSource.m */,
+				E1F0244815E3F56900E0E366 /* QSEvernoteNoteParser.h */,
+				E1F0244915E3F56900E0E366 /* QSEvernoteNoteParser.m */,
 				E1F0244515E1303300E0E366 /* QSEvernoteNotebookParser.h */,
 				E1F0244615E1303300E0E366 /* QSEvernoteNotebookParser.m */,
 			);
@@ -213,6 +218,7 @@
 				E1F0243B15E1281400E0E366 /* Evernote.app in Sources */,
 				E1F0244415E12D2E00E0E366 /* QSEvernoteObjectSource.m in Sources */,
 				E1F0244715E1303300E0E366 /* QSEvernoteNotebookParser.m in Sources */,
+				E1F0244A15E3F56900E0E366 /* QSEvernoteNoteParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

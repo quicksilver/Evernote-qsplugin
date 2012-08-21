@@ -27,6 +27,11 @@
         
         [object setChildren:children];
         return YES;
+    } else if ([object.primaryType isEqualToString:kQSEvernoteNotebookType]) {
+        QSEvernoteNoteParser *noteParser = [[[QSEvernoteNoteParser alloc] init] autorelease];
+        [children addObjectsFromArray:[noteParser notesInNotebook:object]];
+        
+        [object setChildren:children];
     }
 
     return NO;
@@ -37,15 +42,20 @@
  All objects handled by this source have children
  */
 - (BOOL)objectHasChildren:(QSObject *)object {
-    return QSAppIsRunning(kQSEvernoteBundle);
+    if ([object.primaryType isEqualToString:kQSEvernoteNoteType]) {
+        return NO;
+    } else {
+        return QSAppIsRunning(kQSEvernoteBundle);
+    }
 }
 
 /*
  Sets the icons for the notebooks
  */
 - (void)setQuickIconForObject:(QSObject *)object {
-    NSString *type = [object primaryType];
-    if ([type isEqualToString:kQSEvernoteNotebookType]) {
+    if ([object.primaryType isEqualToString:kQSEvernoteNotebookType]) {
+        [object setIcon:[QSResourceManager imageNamed:kQSEvernoteBundle]];
+    } else if ([object.primaryType isEqualToString:kQSEvernoteNoteType]) {
         [object setIcon:[QSResourceManager imageNamed:kQSEvernoteBundle]];
     }
 }

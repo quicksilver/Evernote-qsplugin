@@ -70,10 +70,19 @@
 				<key>name</key>
 				<string>Evernote Notebook</string>
 			</dict>
+			<key>com.evernote.Evernote.note</key>
+			<dict>
+				<key>icon</key>
+				<string>com.evernote.Evernote</string>
+				<key>name</key>
+				<string>Evernote Note</string>
+			</dict>
 		</dict>
 		<key>QSObjectHandlers</key>
 		<dict>
 			<key>com.evernote.Evernote.notebook</key>
+			<string>QSEvernoteObjectSource</string>
+			<key>com.evernote.Evernote.note</key>
 			<string>QSEvernoteObjectSource</string>
 		</dict>
 	</dict>

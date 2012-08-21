@@ -11,3 +11,4 @@
 #define kQSEvernoteBundle @"com.evernote.Evernote"
 
 #define kQSEvernoteNotebookType @"com.evernote.Evernote.notebook"
+#define kQSEvernoteNoteType @"com.evernote.Evernote.note"
