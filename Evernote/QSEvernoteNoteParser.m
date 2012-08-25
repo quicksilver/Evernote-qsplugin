@@ -37,7 +37,13 @@
         }
         [details prependString:notebook.name];
         [object setDetails:details];
-        
+
+        // URL
+        NSString *url = [note.sourceURL get];
+        if (url) {
+            [object setObject:url forType:QSURLType];
+        }
+
         [objects addObject:object];
     }
     

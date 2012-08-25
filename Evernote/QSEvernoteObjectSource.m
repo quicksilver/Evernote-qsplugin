@@ -32,6 +32,7 @@
         [children addObjectsFromArray:[noteParser notesInNotebook:object]];
         
         [object setChildren:children];
+        return YES;
     }
 
     return NO;
