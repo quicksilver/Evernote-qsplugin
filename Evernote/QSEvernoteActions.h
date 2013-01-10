@@ -12,6 +12,8 @@
 
 - (QSObject *) openNotebook:(QSObject *)directObj;
 - (QSObject *) revealNotebook:(QSObject *)directObj;
+- (QSObject *) openNote:(QSObject *)directObj;
+- (QSObject *) revealNote:(QSObject *)directObj;
 
 - (NSArray *) validActionsForDirectObject:(QSObject *)directObj indirectObject:(QSObject *)indirectObj;
 

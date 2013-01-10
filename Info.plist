@@ -125,6 +125,36 @@
 			<key>validatesObjects</key>
 			<true/>
 		</dict>
+		<key>QSEvernoteOpenNote</key>
+		<dict>
+			<key>actionClass</key>
+			<string>QSEvernoteActions</string>
+			<key>actionSelector</key>
+			<string>openNote:</string>
+			<key>directTypes</key>
+			<array>
+				<string>com.evernote.Evernote.note</string>
+			</array>
+			<key>name</key>
+			<string>Open note</string>
+			<key>validatesObjects</key>
+			<true/>
+		</dict>
+		<key>QSEvernoteRevealNote</key>
+		<dict>
+			<key>actionClass</key>
+			<string>QSEvernoteActions</string>
+			<key>actionSelector</key>
+			<string>revealNote:</string>
+			<key>directTypes</key>
+			<array>
+				<string>com.evernote.Evernote.note</string>
+			</array>
+			<key>name</key>
+			<string>Reveal note</string>
+			<key>validatesObjects</key>
+			<true/>
+		</dict>
 	</dict>
 </dict>
 </plist>

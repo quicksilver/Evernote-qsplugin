@@ -30,11 +30,49 @@
 }
 
 
+- (QSObject *) openNote:(QSObject *)directObj {
+    EvernoteNote *note = (EvernoteNote *)[directObj objectForType:kQSEvernoteNoteType];
+    
+    EvernoteApplication *evernote = [SBApplication applicationWithBundleIdentifier:kQSEvernoteBundle];
+    
+    [evernote openNoteWindowWith:note];
+    [evernote activate];
+    return nil;
+}
+
+
+- (QSObject *) revealNote:(QSObject *)directObj {
+    EvernoteNote *note = (EvernoteNote *)[directObj objectForType:kQSEvernoteNoteType];
+    
+    NSString *commands = [NSString stringWithFormat:
+                             @"activate\nset query string of window 1 to \"intitle:\\\"%@\\\" notebook:\\\"%@\\\" created:%@\"",
+                             note.title,
+                             note.notebook.name,
+                             [note.creationDate descriptionWithCalendarFormat:@"%Y%m%dT%H%M%s"
+                                                                     timeZone:nil
+                                                                       locale:nil]
+                             ];
+    
+    [self tellEvernote:commands];
+    
+    return nil;
+}
+
+
 - (NSArray *) validActionsForDirectObject:(QSObject *)directObj indirectObject:(QSObject *)indirectObj {
-    return [NSArray arrayWithObjects:
-            @"QSEvernoteOpenNotebook",
-            @"QSEvernoteRevealNotebook",
-            nil];
+    if (directObj.primaryType == kQSEvernoteNotebookType) {
+        return [NSArray arrayWithObjects:
+                @"QSEvernoteOpenNotebook",
+                @"QSEvernoteRevealNotebook",
+                nil];
+    } else if (directObj.primaryType == kQSEvernoteNoteType) {
+        return [NSArray arrayWithObjects:
+                @"QSEvernoteOpenNote",
+                @"QSEvernoteRevealNote",
+                nil];
+    }
+    
+    return nil;
 }
 
 
