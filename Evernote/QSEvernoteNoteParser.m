@@ -28,6 +28,7 @@
     for (EvernoteNote *note in notebook.notes) {
         object = [QSObject objectWithName:note.title];
         [object setPrimaryType:kQSEvernoteNoteType];
+        [object setObject:note.title forType:kQSEvernoteNotebookType];
         
         NSMutableString *details = [NSMutableString stringWithCapacity:1];
         

@@ -20,6 +20,7 @@
     for (EvernoteNotebook *notebook in evernote.notebooks) {
         object = [QSObject objectWithName:notebook.name];
         [object setPrimaryType:kQSEvernoteNotebookType];
+        [object setObject:notebook.name forType:kQSEvernoteNotebookType];
         [objects addObject:object];
     }
     

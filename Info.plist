@@ -85,6 +85,46 @@
 			<key>com.evernote.Evernote.note</key>
 			<string>QSEvernoteObjectSource</string>
 		</dict>
+		<key>QSActionProviders</key>
+		<dict>
+			<key>QSEvernoteActions</key>
+			<string>QSEvernoteActions</string>
+		</dict>
+	</dict>
+	<key>QSActions</key>
+	<dict>
+		<key>QSEvernoteOpenNotebook</key>
+		<dict>
+			<key>actionClass</key>
+			<string>QSEvernoteActions</string>
+			<key>actionSelector</key>
+			<string>openNotebook:</string>
+			<key>directTypes</key>
+			<array>
+				<string>com.evernote.Evernote.note</string>
+				<string>com.evernote.Evernote.notebook</string>
+			</array>
+			<key>name</key>
+			<string>Open notebook</string>
+			<key>validatesObjects</key>
+			<true/>
+		</dict>
+		<key>QSEvernoteRevealNotebook</key>
+		<dict>
+			<key>actionClass</key>
+			<string>QSEvernoteActions</string>
+			<key>actionSelector</key>
+			<string>revealNotebook:</string>
+			<key>directTypes</key>
+			<array>
+				<string>com.evernote.Evernote.note</string>
+				<string>com.evernote.Evernote.notebook</string>
+			</array>
+			<key>name</key>
+			<string>Reveal notebook</string>
+			<key>validatesObjects</key>
+			<true/>
+		</dict>
 	</dict>
 </dict>
 </plist>
