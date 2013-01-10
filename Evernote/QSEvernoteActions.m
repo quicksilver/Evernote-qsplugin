@@ -13,7 +13,7 @@
 
 - (QSObject *) openNotebook:(QSObject *)directObj {
     NSString *commands = [NSString stringWithFormat:
-                          @"activate\nopen collection window with query string \"%@\"",
+                          @"open collection window with query string \"%@\"\nactivate",
                           [self notebookQuery:directObj]];
     [self tellEvernote:commands];
     return nil;
@@ -39,7 +39,7 @@
 
 
 - (NSString *) notebookQuery:(QSObject *)notebook {
-    return [NSString stringWithFormat:@"notebook:%@", [notebook objectForType:kQSEvernoteNotebookType]];
+    return [NSString stringWithFormat:@"notebook:\"%@\"", [notebook objectForType:kQSEvernoteNotebookType]];
 }
 
 
