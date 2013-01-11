@@ -25,7 +25,6 @@
                           @"activate\nset query string of window 1 to \"%@\"",
                           [self notebookQuery:directObj]];
     [self tellEvernote:commands];
-    
     return nil;
 }
 
@@ -69,6 +68,8 @@
         return [NSArray arrayWithObjects:
                 @"QSEvernoteOpenNote",
                 @"QSEvernoteRevealNote",
+                @"QSEvernoteOpenNotebook",
+                @"QSEvernoteRevealNotebook",
                 nil];
     }
     
@@ -77,7 +78,8 @@
 
 
 - (NSString *) notebookQuery:(QSObject *)notebook {
-    return [NSString stringWithFormat:@"notebook:\"%@\"", [notebook objectForType:kQSEvernoteNotebookType]];
+    return [NSString stringWithFormat:@"notebook:\\\"%@\\\"",
+            [notebook objectForType:kQSEvernoteNotebookType]];
 }
 
 
@@ -86,9 +88,15 @@
                         @"tell application \"Evernote\"\n%@\nend tell",
                         commands];
     
-    NSAppleScript *scriptObject = [[NSAppleScript alloc] initWithSource:source];
-    [scriptObject executeAndReturnError:nil];
-    [scriptObject release];
+    NSAppleScript *scriptObject = [[[NSAppleScript alloc] initWithSource:source] autorelease];
+    NSDictionary *errors;
+    [scriptObject executeAndReturnError:&errors];
+    
+    if (errors) {
+        for (id key in errors) {
+            NSLog(@"%@: %@\n", key, [errors objectForKey:key]);
+        }
+    }
 }
 
 

@@ -29,7 +29,7 @@
         object = [QSObject objectWithName:note.title];
         [object setPrimaryType:kQSEvernoteNoteType];
         [object setObject:note forType:kQSEvernoteNoteType];
-        [object setObject:note.title forType:kQSEvernoteNotebookType];
+        [object setObject:note.notebook.name forType:kQSEvernoteNotebookType];
         
         NSMutableString *details = [NSMutableString stringWithCapacity:1];
         
