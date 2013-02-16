@@ -59,12 +59,12 @@
 
 
 - (NSArray *) validActionsForDirectObject:(QSObject *)directObj indirectObject:(QSObject *)indirectObj {
-    if (directObj.primaryType == kQSEvernoteNotebookType) {
+    if ([directObj.primaryType isEqual:kQSEvernoteNotebookType]) {
         return [NSArray arrayWithObjects:
                 @"QSEvernoteOpenNotebook",
                 @"QSEvernoteRevealNotebook",
                 nil];
-    } else if (directObj.primaryType == kQSEvernoteNoteType) {
+    } else if ([directObj.primaryType isEqual:kQSEvernoteNoteType]) {
         return [NSArray arrayWithObjects:
                 @"QSEvernoteOpenNote",
                 @"QSEvernoteRevealNote",
