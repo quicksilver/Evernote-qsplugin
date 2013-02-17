@@ -8,13 +8,15 @@
 
 #import "QSEvernoteDefinitions.h"
 
-@interface QSEvernoteActions : NSObject
+@interface QSEvernoteActions : QSActionProvider
 
+- (QSObject *) search:(QSObject *)directObj for:(QSObject *)indirectObj;
 - (QSObject *) openNotebook:(QSObject *)directObj;
 - (QSObject *) revealNotebook:(QSObject *)directObj;
 - (QSObject *) openNote:(QSObject *)directObj;
 - (QSObject *) revealNote:(QSObject *)directObj;
 
 - (NSArray *) validActionsForDirectObject:(QSObject *)directObj indirectObject:(QSObject *)indirectObj;
+- (NSArray *) validIndirectObjectsForAction:(NSString *)action directObject:(QSObject *)dObject;
 
 @end

@@ -8,6 +8,8 @@
 
 #import "Evernote.h"
 
+#define QSApplescriptStringEscape @"\\\""
+
 #define kQSEvernoteBundle @"com.evernote.Evernote"
 
 #define kQSEvernoteNotebookType @"com.evernote.Evernote.notebook"

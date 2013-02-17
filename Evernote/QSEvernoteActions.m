@@ -11,6 +11,29 @@
 @implementation QSEvernoteActions
 
 
+- (QSObject *) search:(QSObject *)directObj for:(QSObject *)indirectObj {
+    NSString *query = nil;
+
+    if ([directObj.primaryType isEqualToString:NSFilenamesPboardType]) {
+        query = [self escapeString:[indirectObj objectForType:NSStringPboardType]];
+    } else if ([directObj.primaryType isEqualToString:kQSEvernoteNotebookType]) {
+        query = [NSString stringWithFormat:
+                 @"%@ %@",
+                 [self notebookQuery:directObj],
+                 [self escapeString:[indirectObj objectForType:NSStringPboardType]]];
+    }
+
+    if (query) {
+        NSString *commands = [NSString stringWithFormat:
+                              @"activate\nset query string of window 1 to \"%@\"",
+                              query];
+        [self tellEvernote:commands];
+    }
+
+    return nil;
+}
+
+
 - (QSObject *) openNotebook:(QSObject *)directObj {
     NSString *commands = [NSString stringWithFormat:
                           @"open collection window with query string \"%@\"\nactivate",
@@ -77,6 +100,15 @@
 }
 
 
+- (NSArray *)validIndirectObjectsForAction:(NSString *)action directObject:(QSObject *)directObj {
+    if ([action isEqualToString:@"QSEvernoteSearch"] || [action isEqualToString:@"QSEvernoteSearchNotebook"]) {
+        return [NSArray arrayWithObject:[QSObject textProxyObjectWithDefaultValue:@""]];
+    }
+
+    return nil;
+}
+
+
 - (NSString *) notebookQuery:(QSObject *)notebook {
     return [NSString stringWithFormat:@"notebook:\\\"%@\\\"",
             [notebook objectForType:kQSEvernoteNotebookType]];
@@ -97,6 +129,21 @@
             NSLog(@"%@: %@\n", key, [errors objectForKey:key]);
         }
     }
+}
+
+
+/*
+ Escapes all special characters in a string before usage in an Applescript string
+ */
+- (NSString *) escapeString:(NSString *)string {
+    NSString *escapeString = QSApplescriptStringEscape;
+
+    NSUInteger i;
+    for (i = 0; i < [escapeString length]; i++){
+        NSString *thisString = [escapeString substringWithRange:NSMakeRange(i,1)];
+        string = [[string componentsSeparatedByString:thisString] componentsJoinedByString:[@"\\" stringByAppendingString:thisString]];
+    }
+    return string;
 }
 
 

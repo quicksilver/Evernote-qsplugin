@@ -92,6 +92,37 @@
 			<key>QSEvernoteActions</key>
 			<string>QSEvernoteActions</string>
 		</dict>
+		<key>QSApplicationActions</key>
+		<dict>
+			<key>com.evernote.Evernote</key>
+			<dict>
+				<key>QSEvernoteSearch</key>
+				<dict>
+					<key>argumentCount</key>
+					<integer>2</integer>
+					<key>actionClass</key>
+					<string>QSEvernoteActions</string>
+					<key>actionSelector</key>
+					<string>search:for:</string>
+					<key>directTypes</key>
+					<array>
+						<string>NSFilenamesPboardType</string>
+					</array>
+					<key>icon</key>
+					<string>Find</string>
+					<key>indirectTypes</key>
+					<array>
+						<string>QSTextType</string>
+					</array>
+					<key>name</key>
+					<string>Search For...</string>
+					<key>description</key>
+					<string>Search for text in Evernote</string>
+					<key>validatesObjects</key>
+					<true/>
+				</dict>
+			</dict>
+		</dict>
 	</dict>
 	<key>QSActions</key>
 	<dict>
@@ -156,6 +187,25 @@
 			<string>Reveal note</string>
 			<key>validatesObjects</key>
 			<true/>
+		</dict>
+		<key>QSEvernoteSearchNotebook</key>
+		<dict>
+			<key>actionClass</key>
+			<string>QSEvernoteActions</string>
+			<key>actionSelector</key>
+			<string>search:for:</string>
+			<key>directTypes</key>
+			<array>
+				<string>com.evernote.Evernote.notebook</string>
+			</array>
+			<key>icon</key>
+			<string>Find</string>
+			<key>name</key>
+			<string>Search notebook for...</string>
+			<key>description</key>
+			<string>Search for text in a specific Evernote notebook</string>
+			<key>indirectOptional</key>
+			<false/>
 		</dict>
 	</dict>
 </dict>
