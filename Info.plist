@@ -73,6 +73,18 @@
 					<key>source</key>
 					<string>QSEvernoteObjectSource</string>
 				</dict>
+				<dict>
+					<key>ID</key>
+					<string>QSPresetEvernoteNotes</string>
+					<key>icon</key>
+					<string>com.evernote.Evernote</string>
+					<key>name</key>
+					<string>Notes</string>
+					<key>source</key>
+					<string>QSEvernoteObjectSource</string>
+					<key>enabled</key>
+					<false/>
+				</dict>
 			</array>
 			<key>icon</key>
 			<string>com.evernote.Evernote</string>

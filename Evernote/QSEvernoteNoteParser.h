@@ -10,6 +10,7 @@
 
 @interface QSEvernoteNoteParser : NSObject
 
+- (NSArray *)allNotes;
 - (NSArray *)notesInNotebook:(QSObject *)notebookObject;
 
 @end

@@ -37,6 +37,13 @@
         } else {
             return [QSLib arrayForType:kQSEvernoteNotebookType];
         }
+    } else if ([[theEntry objectForKey:@"ID"] hasPrefix:@"QSPresetEvernoteNotes"]) {
+        if (isRunning) {
+            QSEvernoteNoteParser *noteParser = [[[QSEvernoteNoteParser alloc] init] autorelease];
+            return [noteParser allNotes];
+        } else {
+            return [QSLib arrayForType:kQSEvernoteNoteType];
+        }
     }
     return nil;
 }
