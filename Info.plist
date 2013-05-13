@@ -56,37 +56,36 @@
 			<string>com.evernote.Evernote</string>
 		</array>
 	</dict>
+	<key>QSPresetAdditions</key>
+	<array>
+		<dict>
+			<key>ID</key>
+			<string>QSPresetEvernoteGroup</string>
+			<key>children</key>
+			<array>
+				<dict>
+					<key>ID</key>
+					<string>QSPresetEvernoteNotebooks</string>
+					<key>icon</key>
+					<string>com.evernote.Evernote</string>
+					<key>name</key>
+					<string>Notebooks</string>
+					<key>source</key>
+					<string>QSEvernoteObjectSource</string>
+				</dict>
+			</array>
+			<key>icon</key>
+			<string>com.evernote.Evernote</string>
+			<key>name</key>
+			<string>Evernote</string>
+			<key>requiresBundle</key>
+			<string>com.evernote.Evernote</string>
+			<key>source</key>
+			<string>QSGroupObjectSource</string>
+		</dict>
+	</array>
 	<key>QSRegistration</key>
 	<dict>
-		<key>QSBundleChildHandlers</key>
-		<dict>
-			<key>com.evernote.Evernote</key>
-			<string>QSEvernoteObjectSource</string>
-		</dict>
-		<key>QSTypeDefinitions</key>
-		<dict>
-			<key>com.evernote.Evernote.notebook</key>
-			<dict>
-				<key>icon</key>
-				<string>com.evernote.Evernote</string>
-				<key>name</key>
-				<string>Evernote Notebook</string>
-			</dict>
-			<key>com.evernote.Evernote.note</key>
-			<dict>
-				<key>icon</key>
-				<string>com.evernote.Evernote</string>
-				<key>name</key>
-				<string>Evernote Note</string>
-			</dict>
-		</dict>
-		<key>QSObjectHandlers</key>
-		<dict>
-			<key>com.evernote.Evernote.notebook</key>
-			<string>QSEvernoteObjectSource</string>
-			<key>com.evernote.Evernote.note</key>
-			<string>QSEvernoteObjectSource</string>
-		</dict>
 		<key>QSActionProviders</key>
 		<dict>
 			<key>QSEvernoteActions</key>
@@ -121,6 +120,40 @@
 					<key>validatesObjects</key>
 					<true/>
 				</dict>
+			</dict>
+		</dict>
+		<key>QSBundleChildHandlers</key>
+		<dict>
+			<key>com.evernote.Evernote</key>
+			<string>QSEvernoteObjectSource</string>
+		</dict>
+		<key>QSObjectHandlers</key>
+		<dict>
+			<key>com.evernote.Evernote.notebook</key>
+			<string>QSEvernoteObjectSource</string>
+			<key>com.evernote.Evernote.note</key>
+			<string>QSEvernoteObjectSource</string>
+		</dict>
+		<key>QSObjectSources</key>
+		<dict>
+			<key>QSEvernoteObjectSource</key>
+			<string>QSEvernoteObjectSource</string>
+		</dict>
+		<key>QSTypeDefinitions</key>
+		<dict>
+			<key>com.evernote.Evernote.notebook</key>
+			<dict>
+				<key>icon</key>
+				<string>com.evernote.Evernote</string>
+				<key>name</key>
+				<string>Evernote Notebook</string>
+			</dict>
+			<key>com.evernote.Evernote.note</key>
+			<dict>
+				<key>icon</key>
+				<string>com.evernote.Evernote</string>
+				<key>name</key>
+				<string>Evernote Note</string>
 			</dict>
 		</dict>
 	</dict>

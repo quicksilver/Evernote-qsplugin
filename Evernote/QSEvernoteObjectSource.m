@@ -12,6 +12,37 @@
 
 
 /*
+ Always rescan the catalog entries provided by this object source
+ */
+- (BOOL)indexIsValidFromDate:(NSDate *)indexDate forEntry:(NSDictionary *)theEntry {
+    if (!QSAppIsRunning(kQSEvernoteBundle)) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
+
+/*
+ Provides catalog entries for the current open web pages object
+ */
+- (NSArray *)objectsForEntry:(NSDictionary *)theEntry {
+    
+    BOOL isRunning = QSAppIsRunning(kQSEvernoteBundle);
+    
+    if ([[theEntry objectForKey:@"ID"] hasPrefix:@"QSPresetEvernoteNotebooks"]) {
+        if (isRunning) {
+            QSEvernoteNotebookParser *notebookParser = [[[QSEvernoteNotebookParser alloc] init] autorelease];
+            return [notebookParser allNotebooks];
+        } else {
+            return [QSLib arrayForType:kQSEvernoteNotebookType];
+        }
+    }
+    return nil;
+}
+
+
+/*
  Loads right arrow children for Evernote
  */
 - (BOOL)loadChildrenForObject:(QSObject *)object {
