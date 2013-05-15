@@ -123,12 +123,6 @@
     NSAppleScript *scriptObject = [[[NSAppleScript alloc] initWithSource:source] autorelease];
     NSDictionary *errors;
     [scriptObject executeAndReturnError:&errors];
-    
-    if (errors) {
-        for (id key in errors) {
-            NSLog(@"%@: %@\n", key, [errors objectForKey:key]);
-        }
-    }
 }
 
 
