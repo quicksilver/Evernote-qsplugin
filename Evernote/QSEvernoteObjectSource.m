@@ -12,7 +12,7 @@
 
 
 /*
- Always rescan the catalog entries provided by this object source
+ Rescan the catalog entries if the Evernote app is running
  */
 - (BOOL)indexIsValidFromDate:(NSDate *)indexDate forEntry:(NSDictionary *)theEntry {
     if (!QSAppIsRunning(kQSEvernoteBundle)) {
@@ -24,7 +24,7 @@
 
 
 /*
- Provides catalog entries for the current open web pages object
+ Provides catalog entries notebooks and notes
  */
 - (NSArray *)objectsForEntry:(NSDictionary *)theEntry {
     
@@ -50,7 +50,8 @@
 
 
 /*
- Loads right arrow children for Evernote
+ Loads right arrow children for Evernote, notebooks for the Evernote app itself,
+ and notes for notebooks.
  */
 - (BOOL)loadChildrenForObject:(QSObject *)object {
     if (!QSAppIsRunning(kQSEvernoteBundle)) {
@@ -78,7 +79,7 @@
 
 
 /*
- All objects handled by this source have children
+ The Evernote app only has children if it is running.
  */
 - (BOOL)objectHasChildren:(QSObject *)object {
     if ([object.primaryType isEqualToString:kQSEvernoteNoteType]) {
@@ -89,7 +90,7 @@
 }
 
 /*
- Sets the icons for the notebooks
+ Sets the icons for the notes and notebooks
  */
 - (void)setQuickIconForObject:(QSObject *)object {
     if ([object.primaryType isEqualToString:kQSEvernoteNotebookType]) {
