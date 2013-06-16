@@ -210,6 +210,8 @@
 			</array>
 			<key>name</key>
 			<string>Open notebook</string>
+			<key>precedence</key>
+			<string>0.5</string>
 			<key>validatesObjects</key>
 			<true/>
 		</dict>
@@ -226,6 +228,8 @@
 			</array>
 			<key>name</key>
 			<string>Reveal notebook</string>
+			<key>precedence</key>
+			<string>1</string>
 			<key>validatesObjects</key>
 			<true/>
 		</dict>
@@ -241,6 +245,8 @@
 			</array>
 			<key>name</key>
 			<string>Open note</string>
+			<key>precedence</key>
+			<string>0.5</string>
 			<key>validatesObjects</key>
 			<true/>
 		</dict>
@@ -256,6 +262,8 @@
 			</array>
 			<key>name</key>
 			<string>Reveal note</string>
+			<key>precedence</key>
+			<string>1</string>
 			<key>validatesObjects</key>
 			<true/>
 		</dict>
@@ -277,6 +285,8 @@
 			<string>Search for text in a specific Evernote notebook</string>
 			<key>indirectOptional</key>
 			<false/>
+			<key>precedence</key>
+			<string>0.4</string>
 		</dict>
 	</dict>
 </dict>
