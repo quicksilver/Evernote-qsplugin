@@ -46,6 +46,20 @@
 }
 
 
+- (NSArray *)notesWithTag:(QSObject *)tagObject {
+    NSMutableArray *objects = [NSMutableArray arrayWithCapacity:0];
+    EvernoteApplication *evernote = [SBApplication applicationWithBundleIdentifier:kQSEvernoteBundle];
+
+    NSString *query = [NSString stringWithFormat:@"tag:\"%@\"", [tagObject.name substringFromIndex:1]];
+
+    for (EvernoteNote *note in [evernote findNotes:query]) {
+        [objects addObject:[self objectFrom:note in:note.notebook]];
+    }
+
+    return objects;
+}
+
+
 - (QSObject *)objectFrom:(EvernoteNote *)note in:(EvernoteNotebook *)notebook {
     QSObject *object = [QSObject objectWithName:note.title];
     [object setPrimaryType:kQSEvernoteNoteType];

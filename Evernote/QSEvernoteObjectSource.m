@@ -62,9 +62,17 @@
         if (QSAppIsRunning(kQSEvernoteBundle)) {
             QSEvernoteNotebookParser *notebookParser = [[[QSEvernoteNotebookParser alloc] init] autorelease];
             [children addObjectsFromArray:[notebookParser allNotebooks]];
+
+            QSEvernoteTagParser *tagParser = [[[QSEvernoteTagParser alloc] init] autorelease];
+            [children addObjectsFromArray:[tagParser allTags]];
         } else {
             for (QSObject *obj in [QSLib arrayForType:kQSEvernoteNotebookType]) {
                 if ([obj.primaryType isEqualToString:kQSEvernoteNotebookType]) {
+                    [children addObject:obj];
+                }
+            }
+            for (QSObject *obj in [QSLib arrayForType:kQSEvernoteTagType]) {
+                if ([obj.primaryType isEqualToString:kQSEvernoteTagType]) {
                     [children addObject:obj];
                 }
             }
@@ -82,6 +90,14 @@
                     [children addObject:note];
                 }
             }
+        }
+    } else if ([object.primaryType isEqualToString:kQSEvernoteTagType]) {
+
+        if (QSAppIsRunning(kQSEvernoteBundle)) {
+            QSEvernoteNoteParser *noteParser = [[[QSEvernoteNoteParser alloc] init] autorelease];
+            [children addObjectsFromArray:[noteParser notesWithTag:object]];
+        } else {
+            return NO;
         }
     }
 
@@ -109,6 +125,8 @@
     if ([object.primaryType isEqualToString:kQSEvernoteNotebookType]) {
         [object setIcon:[QSResourceManager imageNamed:kQSEvernoteBundle]];
     } else if ([object.primaryType isEqualToString:kQSEvernoteNoteType]) {
+        [object setIcon:[QSResourceManager imageNamed:kQSEvernoteBundle]];
+    } else if ([object.primaryType isEqualToString:kQSEvernoteTagType]) {
         [object setIcon:[QSResourceManager imageNamed:kQSEvernoteBundle]];
     }
 }

@@ -9,6 +9,7 @@
 #import "QSEvernoteDefinitions.h"
 #import "QSEvernoteNoteParser.h"
 #import "QSEvernoteNotebookParser.h"
+#import "QSEvernoteTagParser.h"
 
 @interface QSEvernoteObjectSource : QSObjectSource
 

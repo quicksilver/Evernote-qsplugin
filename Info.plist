@@ -170,6 +170,8 @@
 			<string>QSEvernoteObjectSource</string>
 			<key>com.evernote.Evernote.note</key>
 			<string>QSEvernoteObjectSource</string>
+			<key>com.evernote.Evernote.tag</key>
+			<string>QSEvernoteObjectSource</string>
 		</dict>
 		<key>QSObjectSources</key>
 		<dict>
@@ -191,6 +193,13 @@
 				<string>com.evernote.Evernote</string>
 				<key>name</key>
 				<string>Evernote Note</string>
+			</dict>
+			<key>com.evernote.Evernote.tag</key>
+			<dict>
+				<key>icon</key>
+				<string>com.evernote.Evernote</string>
+				<key>name</key>
+				<string>Evernote Tag</string>
 			</dict>
 		</dict>
 	</dict>
@@ -263,6 +272,40 @@
 			<string>Reveal note</string>
 			<key>precedence</key>
 			<string>1</string>
+			<key>validatesObjects</key>
+			<true/>
+		</dict>
+		<key>QSEvernoteOpenTag</key>
+		<dict>
+			<key>actionClass</key>
+			<string>QSEvernoteActions</string>
+			<key>actionSelector</key>
+			<string>openTag:</string>
+			<key>directTypes</key>
+			<array>
+				<string>com.evernote.Evernote.tag</string>
+			</array>
+			<key>name</key>
+			<string>Open tag</string>
+			<key>precedence</key>
+			<string>0.5</string>
+			<key>validatesObjects</key>
+			<true/>
+		</dict>
+		<key>QSEvernoteRevealTag</key>
+		<dict>
+			<key>actionClass</key>
+			<string>QSEvernoteActions</string>
+			<key>actionSelector</key>
+			<string>revealTag:</string>
+			<key>directTypes</key>
+			<array>
+				<string>com.evernote.Evernote.tag</string>
+			</array>
+			<key>name</key>
+			<string>Reveal tag</string>
+			<key>precedence</key>
+			<string>1.0</string>
 			<key>validatesObjects</key>
 			<true/>
 		</dict>

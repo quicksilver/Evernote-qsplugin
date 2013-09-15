@@ -12,5 +12,6 @@
 
 - (NSArray *)allNotes;
 - (NSArray *)notesInNotebook:(QSObject *)notebookObject;
+- (NSArray *)notesWithTag:(QSObject *)tagObject;
 
 @end

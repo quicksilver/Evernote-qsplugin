@@ -14,3 +14,4 @@
 
 #define kQSEvernoteNotebookType @"com.evernote.Evernote.notebook"
 #define kQSEvernoteNoteType @"com.evernote.Evernote.note"
+#define kQSEvernoteTagType @"com.evernote.Evernote.tag"

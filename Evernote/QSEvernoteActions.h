@@ -13,6 +13,8 @@
 - (QSObject *) search:(QSObject *)directObj for:(QSObject *)indirectObj;
 - (QSObject *) openNotebook:(QSObject *)directObj;
 - (QSObject *) revealNotebook:(QSObject *)directObj;
+- (QSObject *) openTag:(QSObject *)directObj;
+- (QSObject *) revealTag:(QSObject *)directObj;
 - (QSObject *) openNote:(QSObject *)directObj;
 - (QSObject *) revealNote:(QSObject *)directObj;
 

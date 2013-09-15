@@ -52,6 +52,24 @@
 }
 
 
+- (QSObject *) openTag:(QSObject *)directObj {
+    NSString *commands = [NSString stringWithFormat:
+                          @"set mywin to open collection window\nset query string of mywin to \"%@\"\nactivate",
+                          [self tagQuery:directObj]];
+    [self tellEvernote:commands];
+    return nil;
+}
+
+
+- (QSObject *) revealTag:(QSObject *)directObj {
+    NSString *commands = [NSString stringWithFormat:
+                          @"activate\nset query string of window 1 to \"%@\"",
+                          [self tagQuery:directObj]];
+    [self tellEvernote:commands];
+    return nil;
+}
+
+
 - (QSObject *) openNote:(QSObject *)directObj {
     EvernoteNote *note = (EvernoteNote *)[directObj objectForType:kQSEvernoteNoteType];
     
@@ -87,6 +105,11 @@
                 @"QSEvernoteOpenNotebook",
                 @"QSEvernoteRevealNotebook",
                 nil];
+    } else if ([directObj.primaryType isEqual:kQSEvernoteTagType]) {
+        return [NSArray arrayWithObjects:
+                @"QSEvernoteOpenTag",
+                @"QSEvernoteRevealTag",
+                nil];
     } else if ([directObj.primaryType isEqual:kQSEvernoteNoteType]) {
         return [NSArray arrayWithObjects:
                 @"QSEvernoteOpenNote",
@@ -112,6 +135,12 @@
 - (NSString *) notebookQuery:(QSObject *)notebook {
     return [NSString stringWithFormat:@"notebook:\\\"%@\\\"",
             [notebook objectForType:kQSEvernoteNotebookType]];
+}
+
+
+- (NSString *) tagQuery:(QSObject *)notebook {
+    return [NSString stringWithFormat:@"tag:\\\"%@\\\"",
+            [[notebook objectForType:kQSEvernoteTagType] substringFromIndex:1]];
 }
 
 
