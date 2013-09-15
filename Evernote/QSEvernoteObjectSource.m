@@ -54,38 +54,51 @@
  and notes for notebooks.
  */
 - (BOOL)loadChildrenForObject:(QSObject *)object {
-    if (!QSAppIsRunning(kQSEvernoteBundle)) {
-        return NO;
-    }
     
     NSMutableArray *children = [NSMutableArray arrayWithCapacity:1];
     
     if ([object.primaryType isEqualToString:NSFilenamesPboardType]) {
-        QSEvernoteNotebookParser *notebookParser = [[[QSEvernoteNotebookParser alloc] init] autorelease];
-        [children addObjectsFromArray:[notebookParser allNotebooks]];
         
-        [object setChildren:children];
-        return YES;
+        if (QSAppIsRunning(kQSEvernoteBundle)) {
+            QSEvernoteNotebookParser *notebookParser = [[[QSEvernoteNotebookParser alloc] init] autorelease];
+            [children addObjectsFromArray:[notebookParser allNotebooks]];
+        } else {
+            for (QSObject *obj in [QSLib arrayForType:kQSEvernoteNotebookType]) {
+                if ([obj.primaryType isEqualToString:kQSEvernoteNotebookType]) {
+                    [children addObject:obj];
+                }
+            }
+        }
     } else if ([object.primaryType isEqualToString:kQSEvernoteNotebookType]) {
-        QSEvernoteNoteParser *noteParser = [[[QSEvernoteNoteParser alloc] init] autorelease];
-        [children addObjectsFromArray:[noteParser notesInNotebook:object]];
         
-        [object setChildren:children];
-        return YES;
+        if (QSAppIsRunning(kQSEvernoteBundle)) {
+            QSEvernoteNoteParser *noteParser = [[[QSEvernoteNoteParser alloc] init] autorelease];
+            [children addObjectsFromArray:[noteParser notesInNotebook:object]];
+        } else {
+            NSString *notebookName = [object objectForType:kQSEvernoteNotebookType];
+
+            for (QSObject *note in [QSLib arrayForType:kQSEvernoteNoteType]) {
+                if ([[note objectForType:kQSEvernoteNotebookType] isEqualToString:notebookName]) {
+                    [children addObject:note];
+                }
+            }
+        }
     }
 
-    return NO;
+    [object setChildren:children];
+
+    return YES;
 }
 
 
 /*
- The Evernote app only has children if it is running.
+ Evernote and Notebooks have children, Notes don't.
  */
 - (BOOL)objectHasChildren:(QSObject *)object {
     if ([object.primaryType isEqualToString:kQSEvernoteNoteType]) {
         return NO;
     } else {
-        return QSAppIsRunning(kQSEvernoteBundle);
+        return YES;
     }
 }
 
