@@ -67,13 +67,19 @@
     [object setObject:note.notebook.name forType:kQSEvernoteNotebookType];
 
     NSMutableString *details = [NSMutableString stringWithCapacity:1];
+    NSMutableArray *tags = [NSMutableArray arrayWithCapacity:note.tags.count];
 
     for (EvernoteTag *tag in note.tags) {
-        [details appendString:@" #"];
-        [details appendString:tag.name];
+        NSString *tagName = [NSString stringWithFormat:@"#%@", tag.name];
+        [details appendString:@" "];
+        [details appendString:tagName];
+        [tags addObject:tagName];
     }
+
     [details prependString:notebook.name];
     [object setDetails:details];
+
+    [object setObject:tags forMeta:@"tags"];
 
     // URL
     NSString *url = [note.sourceURL get];

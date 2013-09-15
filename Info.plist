@@ -110,6 +110,16 @@
 					<key>enabled</key>
 					<false/>
 				</dict>
+				<dict>
+					<key>ID</key>
+					<string>QSPresetEvernoteTags</string>
+					<key>icon</key>
+					<string>com.evernote.Evernote</string>
+					<key>name</key>
+					<string>Tags</string>
+					<key>source</key>
+					<string>QSEvernoteObjectSource</string>
+				</dict>
 			</array>
 			<key>icon</key>
 			<string>com.evernote.Evernote</string>

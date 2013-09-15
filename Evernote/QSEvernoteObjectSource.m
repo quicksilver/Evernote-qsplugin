@@ -37,6 +37,13 @@
         } else {
             return [QSLib arrayForType:kQSEvernoteNotebookType];
         }
+    } else if ([[theEntry objectForKey:@"ID"] hasPrefix:@"QSPresetEvernoteTags"]) {
+        if (isRunning) {
+            QSEvernoteTagParser *tagParser = [[[QSEvernoteTagParser alloc] init] autorelease];
+            return [tagParser allTags];
+        } else {
+            return [QSLib arrayForType:kQSEvernoteTagType];
+        }
     } else if ([[theEntry objectForKey:@"ID"] hasPrefix:@"QSPresetEvernoteNotes"]) {
         if (isRunning) {
             QSEvernoteNoteParser *noteParser = [[[QSEvernoteNoteParser alloc] init] autorelease];
@@ -97,7 +104,14 @@
             QSEvernoteNoteParser *noteParser = [[[QSEvernoteNoteParser alloc] init] autorelease];
             [children addObjectsFromArray:[noteParser notesWithTag:object]];
         } else {
-            return NO;
+            NSString *tagName = [object objectForType:kQSEvernoteTagType];
+
+            for (QSObject *note in [QSLib arrayForType:kQSEvernoteNoteType]) {
+                NSArray *tags = [note objectForMeta:@"tags"];
+                if ([tags indexOfObject:tagName] != NSNotFound) {
+                    [children addObject:note];
+                }
+            }
         }
     }
 
