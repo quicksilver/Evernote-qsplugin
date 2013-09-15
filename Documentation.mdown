@@ -28,9 +28,7 @@ The following actions are available:
 * **Search For...** - Searches for text in Evernote. This supports [Evernote's
   Search Grammar](http://dev.evernote.com/documentation/cloud/chapters/search_grammar.php).
     This action is only available as an action on the Evernote application.
-* **Open Notebook** - Opens a notebook in a new Evernote window. Currently,
-  there is a bug in Evernote which blocks this command if you have an active
-  search in Evernote.
+* **Open Notebook** - Opens a notebook in a new Evernote window.
 * **Reveal Notebook** - Opens a notebook in the frontmost Evernote window. Due
   to the Evernote AppleScript interface, this opening is done as a search.
 * **Open Note** - Opens a note in a new note window.

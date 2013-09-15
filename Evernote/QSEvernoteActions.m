@@ -36,7 +36,7 @@
 
 - (QSObject *) openNotebook:(QSObject *)directObj {
     NSString *commands = [NSString stringWithFormat:
-                          @"open collection window with query string \"%@\"\nactivate",
+                          @"set mywin to open collection window\nset query string of mywin to \"%@\"\nactivate",
                           [self notebookQuery:directObj]];
     [self tellEvernote:commands];
     return nil;

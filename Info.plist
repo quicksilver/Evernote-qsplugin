@@ -63,7 +63,7 @@
 &lt;p&gt;The following actions are available:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Search For...&lt;/strong&gt; - Searches for text in Evernote. This supports &lt;a href=&quot;http://dev.evernote.com/documentation/cloud/chapters/search_grammar.php&quot;&gt;Evernote&apos;s Search Grammar&lt;/a&gt;. This action is only available as an action on the Evernote application.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Open Notebook&lt;/strong&gt; - Opens a notebook in a new Evernote window. Currently, there which blocks this command if you have an active search in Evernote.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Open Notebook&lt;/strong&gt; - Opens a notebook in a new Evernote window.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Reveal Notebook&lt;/strong&gt; - Opens a notebook in the frontmost Evernote window. Due to the Evernote AppleScript interface, this opening is done as a search.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Open Note&lt;/strong&gt; - Opens a note in a new note window.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Reveal Note&lt;/strong&gt; - Opens a note in the frontmost Evernote window. Due to the Evernote AppleScript interface, this opening is done as a search.&lt;/li&gt;
@@ -73,8 +73,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Evernote Notebook&lt;/strong&gt; - A notebook in Evernote.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Evernote Note&lt;/strong&gt; - A note in Evernote.&lt;/li&gt;
-&lt;/ul&gt;
-</string>
+&lt;/ul&gt;</string>
 		<key>icon</key>
 		<string>com.evernote.Evernote</string>
 		<key>relatedBundles</key>
