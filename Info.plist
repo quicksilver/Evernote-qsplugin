@@ -56,6 +56,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Notebooks&lt;/strong&gt; - All notebooks in Evernote&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Notes&lt;/strong&gt; - All notes in Evernote. This entry is disabled by default. Beware that if you have many notes, the catalog can become large.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tags&lt;/strong&gt; - All tags in Evernote&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Please note that Evernote needs to be running to add new notes and notebooks to the catalog.&lt;/p&gt;
 &lt;p&gt;Notes and notebooks are also available if you right arrow into the Evernote application in Quicksilver.&lt;/p&gt;
@@ -63,16 +64,19 @@
 &lt;p&gt;The following actions are available:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Search For...&lt;/strong&gt; - Searches for text in Evernote. This supports &lt;a href=&quot;http://dev.evernote.com/documentation/cloud/chapters/search_grammar.php&quot;&gt;Evernote&apos;s Search Grammar&lt;/a&gt;. This action is only available as an action on the Evernote application.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Open Notebook&lt;/strong&gt; - Opens a notebook in a new Evernote window.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Reveal Notebook&lt;/strong&gt; - Opens a notebook in the frontmost Evernote window. Due to the Evernote AppleScript interface, this opening is done as a search.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Open Note&lt;/strong&gt; - Opens a note in a new note window.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Reveal Note&lt;/strong&gt; - Opens a note in the frontmost Evernote window. Due to the Evernote AppleScript interface, this opening is done as a search.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Open Notebook&lt;/strong&gt; - Opens a notebook in a new Evernote window.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Reveal Notebook&lt;/strong&gt; - Opens a notebook in the frontmost Evernote window. Due to the Evernote AppleScript interface, this opening is done as a search.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Open Tag&lt;/strong&gt; - Opens a tag in a new Evernote window.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Reveal Tag&lt;/strong&gt; - Opens a tag in the frontmost Evernote window. Due to the Evernote AppleScript interface, this opening is done as a search.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&quot;types&quot;&gt;Types&lt;/h3&gt;
 &lt;p&gt;The following new types are defined:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Evernote Notebook&lt;/strong&gt; - A notebook in Evernote.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Evernote Note&lt;/strong&gt; - A note in Evernote.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Evernote Tag&lt;/strong&gt; - A tag in Evernote.&lt;/li&gt;
 &lt;/ul&gt;</string>
 		<key>icon</key>
 		<string>com.evernote.Evernote</string>

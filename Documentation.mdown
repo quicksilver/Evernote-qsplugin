@@ -14,6 +14,7 @@ The following additions are made to the catalog:
 * **Notebooks** - All notebooks in Evernote
 * **Notes** - All notes in Evernote. This entry is disabled by default. Beware
   that if you have many notes, the catalog can become large.
+* **Tags** - All tags in Evernote
 
 Please note that Evernote needs to be running to add new notes and notebooks to
 the catalog.
@@ -28,12 +29,15 @@ The following actions are available:
 * **Search For...** - Searches for text in Evernote. This supports [Evernote's
   Search Grammar](http://dev.evernote.com/documentation/cloud/chapters/search_grammar.php).
     This action is only available as an action on the Evernote application.
-* **Open Notebook** - Opens a notebook in a new Evernote window.
-* **Reveal Notebook** - Opens a notebook in the frontmost Evernote window. Due
-  to the Evernote AppleScript interface, this opening is done as a search.
 * **Open Note** - Opens a note in a new note window.
 * **Reveal Note** - Opens a note in the frontmost Evernote window. Due to the
   Evernote AppleScript interface, this opening is done as a search.
+* **Open Notebook** - Opens a notebook in a new Evernote window.
+* **Reveal Notebook** - Opens a notebook in the frontmost Evernote window. Due
+  to the Evernote AppleScript interface, this opening is done as a search.
+* **Open Tag** - Opens a tag in a new Evernote window.
+* **Reveal Tag** - Opens a tag in the frontmost Evernote window. Due
+  to the Evernote AppleScript interface, this opening is done as a search.
 
 ### Types ###
 
@@ -41,4 +45,5 @@ The following new types are defined:
 
 * **Evernote Notebook** - A notebook in Evernote.
 * **Evernote Note** - A note in Evernote.
+* **Evernote Tag** - A tag in Evernote.
 
