@@ -24,10 +24,7 @@
     }
 
     if (query) {
-        NSString *commands = [NSString stringWithFormat:
-                              @"activate\nset query string of window 1 to \"%@\"",
-                              query];
-        [self tellEvernote:commands];
+        [self setQueryStringInFrontmost:query];
     }
 
     return nil;
@@ -44,10 +41,7 @@
 
 
 - (QSObject *) revealNotebook:(QSObject *)directObj {
-    NSString *commands = [NSString stringWithFormat:
-                          @"activate\nset query string of window 1 to \"%@\"",
-                          [self notebookQuery:directObj]];
-    [self tellEvernote:commands];
+    [self setQueryStringInFrontmost:[self notebookQuery:directObj]];
     return nil;
 }
 
@@ -62,10 +56,7 @@
 
 
 - (QSObject *) revealTag:(QSObject *)directObj {
-    NSString *commands = [NSString stringWithFormat:
-                          @"activate\nset query string of window 1 to \"%@\"",
-                          [self tagQuery:directObj]];
-    [self tellEvernote:commands];
+    [self setQueryStringInFrontmost:[self tagQuery:directObj]];
     return nil;
 }
 
@@ -83,18 +74,18 @@
 
 - (QSObject *) revealNote:(QSObject *)directObj {
     EvernoteNote *note = (EvernoteNote *)[directObj objectForType:kQSEvernoteNoteType];
-    
-    NSString *commands = [NSString stringWithFormat:
-                             @"activate\nset query string of window 1 to \"intitle:\\\"%@\\\" notebook:\\\"%@\\\" created:%@\"",
-                             note.title,
-                             note.notebook.name,
-                             [note.creationDate descriptionWithCalendarFormat:@"%Y%m%dT%H%M%s"
-                                                                     timeZone:nil
-                                                                       locale:nil]
-                             ];
-    
-    [self tellEvernote:commands];
-    
+
+    NSString *query = [NSString stringWithFormat:
+                       @"intitle:\\\"%@\\\" notebook:\\\"%@\\\" created:%@",
+                       note.title,
+                       note.notebook.name,
+                       [note.creationDate descriptionWithCalendarFormat:@"%Y%m%dT%H%M%s"
+                                                               timeZone:nil
+                                                                 locale:nil]
+                       ];
+
+    [self setQueryStringInFrontmost:query];
+
     return nil;
 }
 
@@ -143,6 +134,46 @@
             [[notebook objectForType:kQSEvernoteTagType] substringFromIndex:1]];
 }
 
+
+
+/*
+ Sets the query string of the frontmost Evernote collection window to
+ the given query, and if there is no Evernote collection window available,
+ it creates a new.
+ 
+ This method does not escape the queryString.
+ */
+- (void) setQueryStringInFrontmost:(NSString *)queryString {
+    NSString *commands = [NSString stringWithFormat:
+
+                          @"set targetWindow to missing value\n"
+
+                          "repeat with win in windows\n"
+                          "  if class of win = collection window and win is visible then\n"
+                          "    set targetWindow to win\n"
+                          "    exit repeat\n"
+                          "  end if\n"
+                          "end repeat\n"
+
+                          "if targetWindow is missing value then\n"
+                          "  set targetWindow to open collection window\n"
+                          "end if\n"
+
+                          "set query string of targetWindow to \"%@\"\n"
+                          "set winIndex to index of targetWindow\n"
+
+                          "tell application \"System Events\"\n"
+                          "  tell process \"Evernote\"\n"
+                          "    perform action \"AXRaise\" of window winIndex\n"
+                          "  end tell\n"
+                          "end tell\n"
+
+                          "activate\n",
+
+                          queryString];
+
+    [self tellEvernote:commands];
+}
 
 - (void) tellEvernote:(NSString *)commands {
     NSString *source = [NSString stringWithFormat:
