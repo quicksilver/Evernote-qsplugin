@@ -71,6 +71,7 @@
 &lt;li&gt;&lt;strong&gt;Open Tag&lt;/strong&gt; - Opens a tag in a new Evernote window.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Reveal Tag&lt;/strong&gt; - Opens a tag in the frontmost Evernote window. Due to the Evernote AppleScript interface, this opening is done as a search.&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;The Open and Reveal actions are alternates of each other, so for example hitting Cmd-Enter on the Reveal Note action will execute Open Note.&lt;/p&gt;
 &lt;h3 id=&quot;types&quot;&gt;Types&lt;/h3&gt;
 &lt;p&gt;The following new types are defined:&lt;/p&gt;
 &lt;ul&gt;
@@ -225,6 +226,8 @@
 			<string>QSEvernoteActions</string>
 			<key>actionSelector</key>
 			<string>openNotebook:</string>
+			<key>alternateAction</key>
+			<string>QSEvernoteRevealNotebook</string>
 			<key>directTypes</key>
 			<array>
 				<string>com.evernote.Evernote.note</string>
@@ -243,6 +246,8 @@
 			<string>QSEvernoteActions</string>
 			<key>actionSelector</key>
 			<string>revealNotebook:</string>
+			<key>alternateAction</key>
+			<string>QSEvernoteOpenNotebook</string>
 			<key>directTypes</key>
 			<array>
 				<string>com.evernote.Evernote.note</string>
@@ -261,6 +266,8 @@
 			<string>QSEvernoteActions</string>
 			<key>actionSelector</key>
 			<string>openNote:</string>
+			<key>alternateAction</key>
+			<string>QSEvernoteRevealNote</string>
 			<key>directTypes</key>
 			<array>
 				<string>com.evernote.Evernote.note</string>
@@ -278,6 +285,8 @@
 			<string>QSEvernoteActions</string>
 			<key>actionSelector</key>
 			<string>revealNote:</string>
+			<key>alternateAction</key>
+			<string>QSEvernoteOpenNote</string>
 			<key>directTypes</key>
 			<array>
 				<string>com.evernote.Evernote.note</string>
@@ -295,6 +304,8 @@
 			<string>QSEvernoteActions</string>
 			<key>actionSelector</key>
 			<string>openTag:</string>
+			<key>alternateAction</key>
+			<string>QSEvernoteRevealTag</string>
 			<key>directTypes</key>
 			<array>
 				<string>com.evernote.Evernote.tag</string>
@@ -312,6 +323,8 @@
 			<string>QSEvernoteActions</string>
 			<key>actionSelector</key>
 			<string>revealTag:</string>
+			<key>alternateAction</key>
+			<string>QSEvernoteOpenTag</string>
 			<key>directTypes</key>
 			<array>
 				<string>com.evernote.Evernote.tag</string>

@@ -39,6 +39,9 @@ The following actions are available:
 * **Reveal Tag** - Opens a tag in the frontmost Evernote window. Due
   to the Evernote AppleScript interface, this opening is done as a search.
 
+The Open and Reveal actions are alternates of each other, so for example hitting
+Cmd-Enter on the Reveal Note action will execute Open Note.
+
 ### Types ###
 
 The following new types are defined:
