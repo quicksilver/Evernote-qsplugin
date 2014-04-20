@@ -64,7 +64,7 @@
     
     NSMutableArray *children = [NSMutableArray arrayWithCapacity:1];
     
-    if ([object.primaryType isEqualToString:NSFilenamesPboardType]) {
+    if ([object.primaryType isEqualToString:QSFilePathType]) {
         
         if (QSAppIsRunning(kQSEvernoteBundle)) {
             QSEvernoteNotebookParser *notebookParser = [[[QSEvernoteNotebookParser alloc] init] autorelease];

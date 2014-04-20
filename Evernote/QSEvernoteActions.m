@@ -14,13 +14,13 @@
 - (QSObject *) search:(QSObject *)directObj for:(QSObject *)indirectObj {
     NSString *query = nil;
 
-    if ([directObj.primaryType isEqualToString:NSFilenamesPboardType]) {
-        query = [self escapeString:[indirectObj objectForType:NSStringPboardType]];
+    if ([directObj.primaryType isEqualToString:QSFilePathType]) {
+        query = [self escapeString:[indirectObj objectForType:QSTextType]];
     } else if ([directObj.primaryType isEqualToString:kQSEvernoteNotebookType]) {
         query = [NSString stringWithFormat:
                  @"%@ %@",
                  [self notebookQuery:directObj],
-                 [self escapeString:[indirectObj objectForType:NSStringPboardType]]];
+                 [self escapeString:[indirectObj objectForType:QSTextType]]];
     }
 
     if (query) {
